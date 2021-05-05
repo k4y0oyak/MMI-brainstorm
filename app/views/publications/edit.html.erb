@@ -1,0 +1,7 @@
+<h1>Editing Publication</h1>
+
+<%= render 'form', publication: @publication %>
+
+<%= link_to 'Show', @publication %> |
+<%= link_to 'Destroy', @publication, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', publications_path %> 
