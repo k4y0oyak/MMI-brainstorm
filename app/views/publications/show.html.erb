@@ -10,5 +10,10 @@
   <%= @publication.description %>
 </p>
 
+<p>
+  <strong>Author:</strong>
+  <%= @publication.user.email %>
+</p>
+
 <%= link_to 'Edit', edit_publication_path(@publication) %> |
 <%= link_to 'Back', publications_path %>

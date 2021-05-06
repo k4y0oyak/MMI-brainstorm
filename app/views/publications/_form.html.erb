@@ -1,27 +1,28 @@
 <%= form_with(model: publication) do |form| %>
-  <% if publication.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+    <% if publication.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
 
-      <ul>
-        <% publication.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% publication.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="submit">
-    <%= form.submit "Create Pin", class:"btn btn-primary" %>
-  </div>
+    <div class="submit">
+      <%= form.submit "Create Pin", class:"btn btn-primary" %>
+    </div>
 <% end %>
+

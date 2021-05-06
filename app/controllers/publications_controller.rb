@@ -14,7 +14,10 @@ class PublicationsController < ApplicationController
 
   # GET /publications/new
   def new
-    @publication = Publication.new
+  if user_signed_in?
+    @publication = current_user.publications.build  
+  end
+    # Publication.new
   end
 
   # GET /publications/1/edit
@@ -23,7 +26,9 @@ class PublicationsController < ApplicationController
 
   # POST /publications or /publications.json
   def create
-    @publication = Publication.new(publication_params)
+    if user_signed_in?
+      @publication = current_user.publications.build(publication_params)
+    # @publication = Publication.new(publication_params)
 
     respond_to do |format|
       if @publication.save
@@ -34,6 +39,7 @@ class PublicationsController < ApplicationController
         format.json { render json: @publication.errors, status: :unprocessable_entity }
       end
     end
+  end
   end
 
   # PATCH/PUT /publications/1 or /publications/1.json
