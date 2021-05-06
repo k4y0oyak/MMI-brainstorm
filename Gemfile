@@ -34,9 +34,11 @@ group :development, :test do
 end
 
 gem 'haml'
-gem 'bootstrap-sass'
+gem 'sassc-rails', '>= 2.1.0'
 gem 'simple_form'
 gem 'devise', '~> 4.8'
+gem 'jquery-rails', '~> 4.4'
+gem 'bootstrap', '~> 5.0'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.

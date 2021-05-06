@@ -14,9 +14,11 @@ class PublicationsController < ApplicationController
 
   # GET /publications/new
   def new
-  if user_signed_in?
-    @publication = current_user.publications.build  
-  end
+    if user_signed_in?
+      @publication = current_user.publications.build  
+    else
+      redirect_to new_user_session_path
+    end
     # Publication.new
   end
 
