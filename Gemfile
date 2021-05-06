@@ -36,6 +36,7 @@ end
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'devise', '~> 4.8'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
