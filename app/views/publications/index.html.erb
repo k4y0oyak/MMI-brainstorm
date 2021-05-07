@@ -1,16 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Publications</h1>
 <br>
     <% @publications.each do |publication| %>
-        <h2><%= link_to publication.title, publication %></h2>
-        <div style="width: 400px; height: auto">
-            <%= image_tag  (publication.image), style:'width:100%' %>
+        <div class="cards d-flex flex-column justify-content-center align-items-center mx-4 my-4">
+            <div class="title">
+                <h2><%= link_to publication.title, publication %></h2>
+            </div>
+            <div class="image">
+                <%=  link_to image_tag(publication.image, class:"content-card"), publication %>
+            </div>
+            <!-- <td><%= publication.description %></td> -->
+            <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
         </div>
-        <td><%= publication.description %></td>
-        <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
     <% end %>
 <br>
 
-<%= link_to 'New Publication', new_publication_path %>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    <%= link_to 'New Publication', new_publication_path, class:"text-white btn btn-primary btn-lg px-4 me-sm-3" %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:"btn btn-outline-secondary btn-lg px-4" %>
+</div>
