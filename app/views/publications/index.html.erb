@@ -9,13 +9,23 @@
             <div class="image">
                 <%=  link_to image_tag(publication.image, class:"content-card"), publication %>
             </div>
-            <!-- <td><%= publication.description %></td> -->
-            <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
+            <div class="edit-buttom">
+            <%= link_to edit_publication_path(publication) do%>
+                <svg width="45" height="45" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="90" height="90" fill="url(#pattern0)"/>
+                    <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0" transform="scale(0.0111111)"/>
+                    </pattern>
+                    <image id="image0" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAACZklEQVR4nO2aQW4TQRBFPyRxlNwAZ+UjcYigRMpBskJI4QbAQTBJsFfe5QaOkgUG5AOExbSFNEBjp7q+uqb/k0qyekbVrafWTE+VASGEEEIIIUQNvFR+X44AvAfwI8VVGlP+wrwD8NSLt8pfngf8udBH5e94USoRuoV5zhE6f/UP/qEg0SQkmoREk5BoEhJNQqJJSDSJKKJHz7xWDRFEnwD4krn+GcAr0lqqoF8n2ISFAwC3mdybmMO+sz3W74LHQs8zeftxapyradFfM3n7cW2cq2nR3zN5+/HNOJer6NpfhvtO99KpXfSd0710ahf9cYd7P7mtojI8nnGHABaZ3JtYQMc7MyfIy16ke6w0LxrodusFuuPeOsVtGiv1Ce4qOlJz1hvX9df+MhwMEk1CoklINIlIol8DmAA4TjFJY00xwr+PRyGOX975S+zoMYBp5vo03SMMHAC4wf8/kefoPqcthN7RVs6wfb34jXGupkVv08/bxI1xrqZF79IBWRnnCi3a+jLcpauxZ5wrNFbRg+mAeGMVrQ4IiSF1QKp+GQLD6YBULxoYQAeEkD8MniIYtZoweIkeA5hl8s/QWK3GQzSzVhMGD9HMWk0YPEQzazXF8O6AeIheZfL2w1qrKUbE49c6k7cfPy0TReoZekCr1bQuOmStJuKjg1mrKUZE0QCvVlOMqKIBQq0m0r9JvfO70vrLkIZEk5BoEhJNQqJ/41qr0amDlF87moREk5BoEhJNQqJJSDQJiSYh0SRKir7/y9hS+TtKiv6w5Vir+YsxAnCJbhcs0++Sfbbo+YUQQgghhBCiTn4BdYVAnuOkn90AAAAASUVORK5CYII="/>
+                    </defs>
+                </svg>
+                <% end %>
+            </div>
         </div>
     <% end %>
 <br>
 
 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
     <%= link_to 'New Publication', new_publication_path, class:"text-white btn btn-primary btn-lg px-4 me-sm-3" %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:"btn btn-outline-secondary btn-lg px-4" %>
 </div>
