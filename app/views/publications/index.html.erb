@@ -1,31 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Publications</h1>
-
-<table>
-  <thead>
-    <tr>
-        <!-- <th>Title</th>
-        <th>Description</th> -->
-      <!-- <th colspan="3"></th> -->
-    </tr>
-  </thead>
-
-  <tbody>
+<br>
     <% @publications.each do |publication| %>
-    <!-- <h2><%= link_to 'Show', publication %></h2> -->
-
-      <tr>
-        <td><%= link_to publication.title, publication %></td>
+        <h2><%= link_to publication.title, publication %></h2>
+        <div style="width: 400px; height: auto">
+            <%= image_tag  (publication.image), style:'width:100%' %>
+        </div>
         <td><%= publication.description %></td>
-        <!-- <td><%= link_to 'Show', publication %></td> -->
         <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
-        <!-- <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
     <% end %>
-  </tbody>
-</table>
-
 <br>
 
 <%= link_to 'New Publication', new_publication_path %>

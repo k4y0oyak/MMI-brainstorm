@@ -5,6 +5,10 @@
   <%= @publication.title %>
 </p>
 
+<div style="width:400px; height: auto">
+  <%=  link_to image_tag(@publication.image, style:'width:100%'), publications_path %>
+</div>
+
 <p>
   <strong>Description:</strong>
   <%= @publication.description %>

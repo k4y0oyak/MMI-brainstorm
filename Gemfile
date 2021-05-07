@@ -39,6 +39,7 @@ gem 'simple_form'
 gem 'devise', '~> 4.8'
 gem 'jquery-rails', '~> 4.4'
 gem 'bootstrap', '~> 5.0'
+gem 'paperclip', '~> 6.1'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
